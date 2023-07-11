@@ -18,10 +18,14 @@ app.use("/api/contact" , require ("./routes/contact"));
 
 app.use("/api/user" , require ("./routes/user"));
 
+app.use((req,res)=>{ 
+    res.send("API is running...")
+})
+
 
 
 //PORT
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 8258
 
 //create server
 app.listen(PORT , error=>{
